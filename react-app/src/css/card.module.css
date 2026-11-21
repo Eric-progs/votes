@@ -1,0 +1,171 @@
+:root {
+  --line: 2px solid red;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  width: 100%;
+
+  padding: 14px;
+  gap: 7px;
+  border-radius: 14px;
+}
+
+.container.he {
+  background-color: #eff3f9;
+}
+.container.she {
+  background-color: #f9eff7;
+}
+
+.info {
+  display: grid;
+  grid-template-columns: 70px 5fr 2fr;
+  grid-template-rows: 38% 62%;
+  grid-template-areas: 
+  "img name gender"
+  "img description description";
+  gap: 0 7px;
+
+  width: 100%;
+  /*outline: var(--line);*/
+}
+
+/*.info * {
+  outline: var(--line);
+}*/
+
+.info img:nth-child(1) {
+  grid-area: img;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.075);
+}
+
+.info b:nth-child(2) {
+  grid-area: name;
+  display: flex;
+  align-items: center;
+}
+
+.info div:nth-child(3) {
+  grid-area: gender;
+  display: flex;
+  justify-content: end;
+  align-items: start;
+}
+
+.info div:nth-child(3) span {
+  display: flex;
+  align-items: center;
+  border-radius: 7px;
+
+  height: 22px;
+  padding-right: 3px;
+  /*outline: var(--line);*/
+}
+
+.info div:nth-child(3) span.male {
+  color: #004773;
+  background-color: #c8dfed;
+}
+.info div:nth-child(3) span.female {
+  color: #c20078;
+  background-color: #f1cfe2;
+}
+
+.info div:nth-child(3) span svg {
+  transform: scale(0.65);
+}
+
+.info div:nth-child(3) span small {
+  transform: translateX(-3px);
+}
+
+
+.info small:nth-child(4) {
+  grid-area: description;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+
+.status {
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+  color: rgba(0, 0, 0, 0.7);
+  transform: scale(0.9);
+}
+
+.status span {
+  display: flex;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.075);
+  padding: 0 8px 0 2px;
+  border-radius: 16px;
+}
+
+.status span svg {
+  transform: scale(0.65) translateX(2px);
+}
+
+
+.buttonsDiv {
+  display: flex;
+  gap: 14px;
+}
+
+.buttonsDiv .viewButton {
+  padding: 5px 7px;
+  border-radius: 5px;
+  border: 1px solid black;
+  font-weight: bold;
+  min-width: 90px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.buttonsDiv .voteButton {
+  padding: 7px;
+  border-radius: 15px;
+  background-color: green;
+  color: white;
+  border: none;
+  font-weight: bold;
+  min-width: 90px;
+  cursor: pointer;
+}
+
+.buttonsDiv .loadingBtn {
+  display: flex;
+  justify-content: center;
+  padding: 7px;
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.075);
+  border: none;
+  min-width: 90px;
+}
+
+.buttonsDiv .loadingBtn .spinner {
+  border-radius: 50%;
+  border: 3px solid gray;
+  border-top: 3px solid black;
+  width: 15px;
+  height: 15px;
+  animation: spinning 1s linear infinite;
+}
+
+.buttonsDiv .voteButton.disable {
+  opacity: 0.4;
+  cursor: none;
+}
+
+@keyframes spinning {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

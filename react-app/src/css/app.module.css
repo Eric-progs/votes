@@ -1,0 +1,21 @@
+:root {
+  --line: 2px solid red;
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 14px;
+  gap: 14px;
+
+  width: 100%;
+  outline: var(--line);
+}
+
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  width: 100%;
+}
