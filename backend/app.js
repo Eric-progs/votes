@@ -1,2 +1,7 @@
+const app = require("./utils/config");
 
-console.error("Hello!")
+const voteRoute = require("./routes/votings");
+
+app.use("/api", voteRoute);
+
+app.listen(3000, () => console.log("Server is running..."));

@@ -39,14 +39,24 @@
 
 .info img:nth-child(1) {
   grid-area: img;
+  object-fit: cover;
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0.075);
+}
+
+.info img:nth-child(1).female {
+  outline: 3px solid #ff67b8;
+}
+
+.info img:nth-child(1).male {
+  outline: 3px solid #67acff;
 }
 
 .info b:nth-child(2) {
   grid-area: name;
   display: flex;
   align-items: center;
+  padding-left: 4px;
 }
 
 .info div:nth-child(3) {
@@ -87,6 +97,7 @@
 .info small:nth-child(4) {
   grid-area: description;
   color: rgba(0, 0, 0, 0.7);
+  padding-left: 4px;
 }
 
 
@@ -151,8 +162,8 @@
   border-radius: 50%;
   border: 3px solid gray;
   border-top: 3px solid black;
-  width: 15px;
-  height: 15px;
+  width: 16px;
+  height: 16px;
   animation: spinning 1s linear infinite;
 }
 
@@ -162,10 +173,10 @@
 }
 
 @keyframes spinning {
-  0% {
+  from {
     transform: rotate(0);
   }
-  100% {
+  to {
     transform: rotate(360deg);
   }
 }
